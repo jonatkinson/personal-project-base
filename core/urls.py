@@ -6,7 +6,6 @@ from django.views.generic.base import TemplateView
 
 from django.contrib.auth import views as auth_views
 
-from days import views as days_views
 from users import views as users_views
 
 urlpatterns = [
