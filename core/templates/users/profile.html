@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block header %}
+<h1>Profile</h1>
+{% endblock %}
+
+{% block body %}
+<form method="post" action="{% url "profile" user.username %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
+
+<p><a href="{% url "logout" %}">Logout</a></p>
+{% endblock body %}
