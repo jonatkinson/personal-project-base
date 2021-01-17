@@ -5,3 +5,5 @@ env/
 var/
 sqlite.db
 database.sqlite3
+.ipython_data_local/startup/
+.ipython_data_local/history.sqlite
