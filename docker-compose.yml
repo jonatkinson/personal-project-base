@@ -1,11 +1,15 @@
 version: '3'
-    
+
+volumes:
+  .ipython_data_local: {}
+
 services:
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - .ipython_data_local:/root/.ipython/profile_default
     ports:
       - "8000:8000"
     environment:
