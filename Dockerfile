@@ -2,14 +2,15 @@ FROM python:3.8.3-slim
 
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir /app
+RUN useradd -m user
+USER user
+WORKDIR /home/user
+ENV PATH="/home/user/.local/bin:${PATH}"
 
-WORKDIR /app
+COPY . /home/user
 
-COPY requirements.txt /etc/requirements.txt
-RUN pip install -r /etc/requirements.txt
-
-COPY . /app/
+RUN pip --disable-pip-version-check install --upgrade pip
+RUN pip install -r ./requirements.txt
 
 EXPOSE 80
 CMD gunicorn core.wsgi -b 0.0.0.0:8000 --log-file -
