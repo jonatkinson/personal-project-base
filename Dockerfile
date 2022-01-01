@@ -1,4 +1,4 @@
-FROM python:3.8.3-slim
+FROM python:3.10.1-slim
 
 ENV PYTHONUNBUFFERED 1
 
@@ -7,7 +7,7 @@ USER user
 WORKDIR /home/user
 ENV PATH="/home/user/.local/bin:${PATH}"
 
-COPY . /home/user
+COPY . /home/user/app
 
 RUN pip --disable-pip-version-check install --user --upgrade pip
 RUN pip install --user -r ./requirements.txt

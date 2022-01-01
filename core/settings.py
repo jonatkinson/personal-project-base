@@ -1,11 +1,17 @@
 import os
-import dj_database_url
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=(list, ['*']),
+    CSRF_TRUSTED_ORIGINS=(list, []),
+)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = env("SECRET_KEY")
 
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -52,8 +58,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "core.wsgi.application"
 
-DATABASES = {}
-DATABASES["default"] = dj_database_url.parse(os.environ["DATABASE_URL"])
+DATABASES = {
+    'default': env.db(),
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
