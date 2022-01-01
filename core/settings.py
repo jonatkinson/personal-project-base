@@ -85,6 +85,8 @@ STATIC_URL = "/static/"
 
 WHITENOISE_USE_FINDERS = True
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 LOGIN_URL = "/login/"
 
 MESSAGE_TAGS = {
