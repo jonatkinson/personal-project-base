@@ -4,7 +4,7 @@ ENV PYTHONUNBUFFERED 1
 
 RUN useradd -m user
 USER user
-WORKDIR /home/user
+WORKDIR /home/user/app
 ENV PATH="/home/user/.local/bin:${PATH}"
 
 COPY . /home/user/app
