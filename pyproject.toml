@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "personal-project-base"
+version = "0.1.0"
+description = ""
+authors = ["Jon Atkinson <jon@jonatkinson.co.uk>"]
+readme = "README.md"
+packages = [{include = "personal_project_base"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.4"
+gunicorn = "^20.1.0"
+dj-database-url = "^1.2.0"
+whitenoise = "^6.2.0"
+django-environ = "^0.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
