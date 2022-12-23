@@ -6,10 +6,11 @@
 <h1>Register</h1>
 {% endblock %}
 
-{% block body %}
+{% block content %}
 <form method="post" action="{% url "register" %}" novalidate>
     {% csrf_token %}
     {{ form.non_field_errors }}
+    {{ form.erros }}
 
     <p>{{ form.username.label }}<br>{{ form.username }}</p>
     <p>{{ form.email.label }}<br>{{ form.email }}</p>
@@ -17,5 +18,5 @@
     <p>{{ form.password_2.label }}<br>{{ form.password_2 }}<br>{{ form.password_2.help_text }}</p>
     <input type="submit" value="Register">
 </form>
-{% endblock body %}
+{% endblock content %}
 

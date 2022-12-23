@@ -6,7 +6,8 @@ volumes:
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: poetry run python manage.py runserver 0.0.0.0:8000
+    platform: linux/amd64
     volumes:
       - .:/home/user/app
       - .ipython_data_local:/root/.ipython/profile_default
@@ -15,5 +16,6 @@ services:
     environment:
       - SECRET_KEY=development-secret
       - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=core.settings
       - DATABASE_URL=sqlite:////home/user/app/database.sqlite3
       - CSRF_TRUSTED_ORIGINS=http://localhost

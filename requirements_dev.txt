@@ -1,6 +1,0 @@
-ipython
-ipdb
-pylint
-pylint-django
-rope
-black
