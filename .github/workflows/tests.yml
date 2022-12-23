@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  DJANGO_SETTINGS_MODULE=core.settings
+
 jobs:
   build:
 
