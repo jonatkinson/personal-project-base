@@ -15,6 +15,7 @@ ENV POETRY_VERSION=1.3.1 \
 RUN useradd -m user
 USER user
 WORKDIR /home/user/app
+RUN mkdir /home/user/app/staticfiles
 
 # Install poetry separated from system interpreter
 RUN python3 -m venv $POETRY_VENV \
