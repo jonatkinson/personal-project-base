@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  DJANGO_SETTINGS_MODULE=core.settings
+  DJANGO_SETTINGS_MODULE: core.settings
 
 jobs:
   build:
