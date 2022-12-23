@@ -8,6 +8,8 @@ on:
 
 env:
   DJANGO_SETTINGS_MODULE: core.settings
+  DEBUG: True
+  SECRET_KEY: WorkflowSecret
 
 jobs:
   build:
